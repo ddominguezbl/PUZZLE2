@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="510dp"
+        android:layout_height="757dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fondofinal" />
+
+    <ImageView
+        android:id="@+id/iVlogo"
+        android:layout_width="141dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logodefinitivo1"
+        tools:context=".HelpActivity"/>
+
+    <ImageView
+        android:id="@+id/ivRegresar4"
+        android:layout_width="46dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:adjustViewBounds="true"
+        android:background="#9C7B7B"
+        android:baseline="@dimen/cardview_compat_inset_shadow"
+        android:clickable="true"
+
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/textHelp"
+        android:layout_width="145dp"
+        android:layout_height="56dp"
+        android:autoText="false"
+        android:background="@color/purple_500"
+        android:fontFamily="@font/chango"
+        android:paddingLeft="5dp"
+        android:paddingTop="4dp"
+        android:text="HELP"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <TextView
+        android:id="@+id/textAyuda1"
+        android:layout_width="270dp"
+        android:layout_height="330dp"
+        android:background="#C87E7E7E"
+        android:fontFamily="@font/chango"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="-Para iniciar la partida, pulse el botón START en el menú de inicio. "
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHelp"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <TextView
+        android:id="@+id/textAyuda2"
+        android:layout_width="273dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/chango"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="-Mueve el recuadro blanco para desplazar las piezas."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textAyuda1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textAyuda1"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/textAyuda3"
+        android:layout_width="273dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/chango"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="-Puedes seleccionar la dificultad del puzle en el menu de inicio."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textAyuda1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textAyuda1"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/textAyuda4"
+        android:layout_width="275dp"
+        android:layout_height="96dp"
+        android:fontFamily="@font/chango"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="-En la opción RANKING se encuentran las puntuaciones mas altas registradas en la aplicación."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textAyuda1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textAyuda1"
+        app:layout_constraintVertical_bias="0.965" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
