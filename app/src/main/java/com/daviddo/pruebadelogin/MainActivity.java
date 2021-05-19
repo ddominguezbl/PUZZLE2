@@ -3,6 +3,7 @@ package com.daviddo.pruebadelogin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button btEntrar;
     ImageView ivRegresar2;
     ImageView iVlogo;
-
+    MediaPlayer reproductor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btEntrar = findViewById(R.id.btJugar);
         ivRegresar2 = findViewById(R.id.ivRegresar2);
+         reproductor = MediaPlayer.create(this,R.raw.music1);
+         // Para que el audio se repita incesantemente
+        reproductor.setLooping(true);
+        // Para arrancar el audio
+        reproductor.start();
+
 
         ivRegresar2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        reproductor.stop();
     }
 
     public void btRegistrarPulsado(View v) {

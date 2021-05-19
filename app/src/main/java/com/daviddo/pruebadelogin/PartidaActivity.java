@@ -7,7 +7,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.MediaScannerConnection;
+import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -16,6 +19,8 @@ import android.os.CountDownTimer;
 import android.os.Environment;
 import android.provider.CalendarContract;
 import android.provider.MediaStore;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -83,7 +88,8 @@ public class PartidaActivity extends AppCompatActivity {
     private static final int codigofoto = 20;
     ImageView imgFoto;
     String nombreusuario;
-
+    MediaPlayer reproductor;
+    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
 
 
     ImageView[][] arrayImagenes;
@@ -98,6 +104,9 @@ public class PartidaActivity extends AppCompatActivity {
         numfilas = datos.getInt("numfilas");
         numcolumnas = datos.getInt("numcolumnas");
         nombreusuario = getIntent().getStringExtra("etiquetanombreusuario");
+
+
+
 
         imgFoto = findViewById(R.id.imagenseleccionada);
         btConfig = findViewById(R.id.btConfig);
@@ -313,7 +322,7 @@ public class PartidaActivity extends AppCompatActivity {
     }
 
     public void imagenpulsada(View view) {
-
+        toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
         imagenpulsada = (ImageView) view;
         Posiciones posicionquetenia  = (Posiciones) imagenpulsada.getTag();
         filadelaimagenpulsada = posicionquetenia.xActual;
@@ -489,8 +498,6 @@ public class PartidaActivity extends AppCompatActivity {
         Button btGaleria = dialog.findViewById(R.id.btGaleria);
         Button btCam = dialog.findViewById(R.id.btCamara);
 
-
-
         btGaleria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -508,34 +515,39 @@ public class PartidaActivity extends AppCompatActivity {
                 dialog.cancel();
                 abrircamara();
                 Toast.makeText(getApplicationContext(), "Pulsado Camara", Toast.LENGTH_SHORT).show();
-        
 
             }
         });
         dialog.show();
 
-
-
     }
 
+   // static final int TOMAR_FOTO_THUMBNAIL = 6642;
     private void abrircamara() {
-        File miarchivo = new File(Environment.getExternalStorageDirectory(), directorioimagen);
-        boolean existe = miarchivo.exists();
-        if(existe==false){
-            existe = miarchivo.mkdirs();
-        }
-        if(existe==true){
-            Long consecutivo = System.currentTimeMillis()/1000;
-            String nombre=consecutivo.toString()+".jpg";
 
-            path = Environment.getExternalStorageDirectory()+File.separator+directorioimagen+File.separator+nombre;
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, codigofoto);
 
-            archivoimagen = new File(path);
 
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(archivoimagen));
-            startActivityForResult(intent,codigofoto);
-        }
+
+//        File miarchivo = new File(Environment.getExternalStorageDirectory(), directorioimagen);
+//        boolean existe = miarchivo.exists();
+//        if(existe==false){
+//            existe = miarchivo.mkdirs();
+//        }
+//        if(existe==true){
+//            Long consecutivo = System.currentTimeMillis()/1000;
+//            String nombre=consecutivo.toString()+".jpg";
+//
+//            path = Environment.getExternalStorageDirectory()+File.separator+directorioimagen+File.separator+nombre;
+//
+//            archivoimagen = new File(path);
+//
+//            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(archivoimagen));
+//            startActivityForResult(intent,codigofoto);
+//        }
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -554,16 +566,25 @@ public class PartidaActivity extends AppCompatActivity {
 
                     break;
                 case codigofoto:
-                    MediaScannerConnection.scanFile(getApplicationContext(), new String[]{path}, null,
-                            new MediaScannerConnection.OnScanCompletedListener() {
-                                @Override
-                                public void onScanCompleted(String path, Uri uri) {
-                                    Log.i("Path", "" + path);
-                                }
-                            });
-                    bitmapimagen = BitmapFactory.decodeFile(path);
-                    imagenoriginal = bitmapimagen;
-                //    imgFoto.setImageBitmap(bitmapimagen);
+
+                    // ------- ASI SI SOLO QUEREMOS EL THUMBNAIL
+                    Bundle extras = data.getExtras();
+                    imagenoriginal = (Bitmap) extras.get("data");
+                    // damos tamaño al bitmp antres de meterlo en imagen, si queremos
+                //    imagenoriginal = Bitmap.createScaledBitmap(imagenoriginal, 330, 300, false);
+
+
+
+//                    MediaScannerConnection.scanFile(getApplicationContext(), new String[]{path}, null,
+//                            new MediaScannerConnection.OnScanCompletedListener() {
+//                                @Override
+//                                public void onScanCompleted(String path, Uri uri) {
+//                                    Log.i("Path", "" + path);
+//                                }
+//                            });
+//                    bitmapimagen = BitmapFactory.decodeFile(path);
+//                    imagenoriginal = bitmapimagen;
+//                //    imgFoto.setImageBitmap(bitmapimagen);
                     break;
             }
 
@@ -627,8 +648,36 @@ public class PartidaActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            contadorSegundos = 0;
 
+            // activamos la parada de la musica en una llamada entrante, y reactivamos al colgar la llamada
+            PhoneStateListener phoneStateListener = new PhoneStateListener() {
+                @Override
+                public void onCallStateChanged(int state, String incomingNumber) {
+                    if (state == TelephonyManager.CALL_STATE_RINGING) {
+                       reproductor.pause();
+                    } else if(state == TelephonyManager.CALL_STATE_IDLE) {
+                       if(! reproductor.isPlaying()){
+                           reproductor.start();
+                        }
+                    } else if(state == TelephonyManager.CALL_STATE_OFFHOOK) {
+
+                    }
+                    super.onCallStateChanged(state, incomingNumber);
+                }
+            };
+            TelephonyManager mgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+            if(mgr != null) {
+                mgr.listen(phoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+            }
+
+
+            contadorSegundos = 0;
+            reproductor = MediaPlayer.create(PartidaActivity.this,R.raw.music2);
+            // Para que el audio se repita incesantemente
+            reproductor.setLooping(true);
+            // Para arrancar el audio
+            reproductor.start();
+            // Para parar el audio
         }
 
 
@@ -659,7 +708,7 @@ public class PartidaActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean result) {
-
+             reproductor.stop();
         }
 
         @Override
@@ -702,6 +751,17 @@ public class PartidaActivity extends AppCompatActivity {
             intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
             intent.putExtra("title", "Hoy hice un nuevo record !!!");
             startActivity(intent);
+        }
+    }
+
+
+
+
+    public void onPauseMusic(View v){
+        if(reproductor.isPlaying()){
+            reproductor.pause();
+        }else{
+            reproductor.start();
         }
     }
 }
