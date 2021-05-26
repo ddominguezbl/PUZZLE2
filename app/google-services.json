@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924858761051",
+    "project_id": "puzzle-p8-group",
+    "storage_bucket": "puzzle-p8-group.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924858761051:android:a13da6a050674f215fe47e",
+        "android_client_info": {
+          "package_name": "com.daviddo.pruebadelogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924858761051-ne70qip6e2c1ai31ke16itq3qk2it7lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmCq3l2PClmtzlmPbQ3SxqCmLk2sLbLGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924858761051-ne70qip6e2c1ai31ke16itq3qk2it7lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
