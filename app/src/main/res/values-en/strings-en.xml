@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">LOGIN TEST</string>
+    <string name="boton_empezar">START</string>
+    <string name="boton_gameover">GAME OVER</string>
+    <string name="textodequeestamosconectando">CONNECTING WITH SERVER...WAITING...</string>
+    <string name="elegirgaleria">GALLERY</string>
+    <string name="Dedondesacarimagen">WHERE CHOOSE IMAGE??</string>
+    <string name="elegirCamara">CAMERA</string>
+    <string name="tiempoterminado">OUT TIME</string>
+    <string name="GameOverdeactivitigameover">END GAME</string>
+    <string name="iniciar">BEGIN</string>
+    <string name="volverajugar">TRY AGAIN</string>
+    <string name="textoayuda">HELP</string>
+    <string name="ayuda1linea">"-Para iniciar la partida, pulse el botón START en el menú de inicio. "</string>
+    <string name="ayuda2linea">-Mueve el recuadro blanco para desplazar las piezas.</string>
+    <string name="ayuda3linea">-Puedes seleccionar la dificultad del puzle en el menu de inicio.</string>
+    <string name="ayuda4linea">-En la opción RANKING se encuentran las puntuaciones mas altas registradas en la aplicación.</string>
+    <string name="usuario">Usuario</string>
+    <string name="ENTRARaJUGAR">BEGIN A NEW PLAY</string>
+    <string name="RANKING">RANKING</string>
+    <string name="FÁCIL">EASY</string>
+    <string name="NORMAL">NORMAL</string>
+    <string name="DIFÍCIL">HARD</string>
+    <string name="DebecrerunacuentaennuestraaplicacionusandounacuentadeGoogle">Debe crer una cuenta en nuestra aplicacion usando una cuenta de Google:</string>
+    <string name="USUARIO">USUARIO:</string>
+    <string name="PASSWORD">CONTRASEÑA</string>
+    <string name="ENTRAR">ENTRAR</string>
+    <string name="REGISTRAR">REGISTRAR</string>
+    <string name="Round">Ronda</string>
+    <string name="pausa">PAUSA</string>
+    <string name="ALTAUSUARIO">ALTA USUARIO</string>
+    <string name="ALTAPASSWORD">ALTA CONTRASEÑA</string>
+    <string name="Bienvenido">Bienvenido!</string>
+</resources>

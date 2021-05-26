@@ -30,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="¿De donde desea sacar la imagen?"
                 android:fontFamily="@font/birdygame"
+                android:gravity="center"
+                android:text="@string/Dedondesacarimagen"
                 android:textAllCaps="true"
                 android:textSize="20sp"
                 android:textStyle="italic" />
@@ -40,16 +40,16 @@
             <Button
                 android:id="@+id/btGaleria"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/birdygame"
                 android:layout_height="wrap_content"
-                android:text="Galeria" />
+                android:fontFamily="@font/birdygame"
+                android:text="@string/elegirgaleria" />
 
             <Button
                 android:id="@+id/btCamara"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/birdygame"
                 android:layout_height="wrap_content"
-                android:text="Cármara" />
+                android:fontFamily="@font/birdygame"
+                android:text="@string/elegirCamara" />
 
 
         </LinearLayout>

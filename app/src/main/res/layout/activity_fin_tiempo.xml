@@ -32,7 +32,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="SE ACABÓ EL TIEMPO"
+                android:text="@string/tiempoterminado"
                 android:textAllCaps="true"
                 android:textSize="30sp"
                 android:textStyle="italic" />

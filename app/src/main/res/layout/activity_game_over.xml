@@ -13,7 +13,7 @@
         android:layout_height="738dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -28,7 +28,7 @@
         android:background="#F44336"
         android:fontFamily="@font/chango"
         android:padding="10dp"
-        android:text="Game Over"
+        android:text="@string/GameOverdeactivitigameover"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
@@ -54,20 +54,9 @@
         android:layout_height="71dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/chango"
-        android:text="Volver A Jugar"
+        android:text="@string/volverajugar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="251dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/chango"
-        android:text="Inicio"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 

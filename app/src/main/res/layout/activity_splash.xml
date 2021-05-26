@@ -23,7 +23,7 @@
         android:layout_width="182dp"
         android:layout_height="64dp"
         android:fontFamily="@font/birdygame"
-        android:text="Bienvenido!"
+        android:text="@string/Bienvenido"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"

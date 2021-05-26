@@ -54,7 +54,7 @@
         android:autoText="true"
         android:background="@color/purple_500"
         android:fontFamily="@font/chango"
-        android:text="USUARIO"
+        android:text="@string/usuario"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -67,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:fontFamily="@font/birdygame"
-        android:onClick="btJugarPulsado"
-        android:text="ENTRAR a JUGAR"
+
+        android:text="@string/ENTRARaJUGAR"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btRanking"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         android:layout_height="75dp"
         android:fontFamily="@font/chango"
         android:onClick="btRankingPulsado"
-        android:text="RANKING"
+        android:text="@string/RANKING"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombreUsuario"
-        app:layout_constraintVertical_bias="0.387"
+        app:layout_constraintVertical_bias="0.373"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/birdygame"
-            android:text="FÁCIL" />
+            android:text="@string/FÁCIL" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/modonormal"
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/birdygame"
-            android:text="NORMAL" />
+            android:text="@string/NORMAL" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/mododifícil"
@@ -128,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/birdygame"
-            android:text="DIFÍCIL" />
+            android:text="@string/DIFÍCIL" />
     </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

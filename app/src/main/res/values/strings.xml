@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Prueba de Login</string>
+    <string name="boton_empezar">Empezar</string>
+    <string name="boton_gameover">Fin partida</string>
+    <string name="textodequeestamosconectando">Conectando con el servidor... espere por favor...</string>
+    <string name="elegirgaleria">Galeria</string>
+    <string name="Dedondesacarimagen">¿De donde desea sacar la imagen?</string>
+    <string name="elegirCamara">Cámara</string>
+    <string name="tiempoterminado">SE ACABÓ EL TIEMPO</string>
+    <string name="GameOverdeactivitigameover">Fin del juego</string>
+    <string name="iniciar">Inicio</string>
+    <string name="volverajugar">Volver a jugar</string>
+    <string name="textoayuda">Ayuda</string>
+    <string name="ayuda1linea">"-Para iniciar la partida, pulse el botón START en el menú de inicio. "</string>
+    <string name="ayuda2linea">-Mueve el recuadro blanco para desplazar las piezas.</string>
+    <string name="ayuda3linea">-Puedes seleccionar la dificultad del puzle en el menu de inicio.</string>
+    <string name="ayuda4linea">-En la opción RANKING se encuentran las puntuaciones mas altas registradas en la aplicación.</string>
+    <string name="usuario">Usuario</string>
+    <string name="ENTRARaJUGAR">ENTRAR a JUGAR</string>
+    <string name="RANKING">LOS MEJORES</string>
+    <string name="FÁCIL">FÁCIL</string>
+    <string name="NORMAL">NORMAL</string>
+    <string name="DIFÍCIL">DIFÍCIL</string>
+    <string name="DebecrerunacuentaennuestraaplicacionusandounacuentadeGoogle">Debe crer una cuenta en nuestra aplicacion usando una cuenta de Google:</string>
+    <string name="USUARIO">USUARIO:</string>
+    <string name="PASSWORD">CONTRASEÑA</string>
+    <string name="ENTRAR">ENTRAR</string>
+    <string name="REGISTRAR">REGISTRAR</string>
+    <string name="Round">Ronda</string>
+    <string name="pausa">PAUSA</string>
+    <string name="ALTAUSUARIO">ALTA USUARIO</string>
+    <string name="ALTAPASSWORD">ALTA CONTRASEÑA</string>
+
+    <string name="Bienvenido">Bienvenido!</string>
 </resources>

@@ -21,7 +21,7 @@ public class GameOver extends AppCompatActivity {
 
     ImageView imageView3;
     TextView GameOver;
-    Button button2;
+
     Button btVolverAJugar;
 
 
@@ -36,7 +36,7 @@ public class GameOver extends AppCompatActivity {
 
         imageView3 = (ImageView) findViewById(R.id.imageView3);
         GameOver = (TextView) findViewById(R.id.GameOver);
-        button2 = (Button) findViewById(R.id.button2);
+
         btVolverAJugar = (Button) findViewById(R.id.btVolverAJugar);
 
 
@@ -57,16 +57,7 @@ public class GameOver extends AppCompatActivity {
 
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Toast.makeText(GameOver.this, "Has seleccionado volver a jugar", Toast.LENGTH_SHORT).show();
-                Intent InicioIntent = new Intent( GameOver.this, MainActivity.class);
-                startActivity(InicioIntent);
-            }
 
-        });
 
     }
 

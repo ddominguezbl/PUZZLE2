@@ -1,20 +1,22 @@
 package com.daviddo.pruebadelogin;
 
-public class RondaRecord {
+import java.io.Serializable;
 
-
+public class RondaRecord implements Serializable, Comparable<RondaRecord> {
         private int ronda;
         private  String nombre ;
         private   int puntuacion;
 
         public RondaRecord(int ronda, String nombre, int puntuacion) {
-
             this.ronda = ronda;
             this.nombre = nombre;
             this.puntuacion = puntuacion;
         }
 
-        @Override
+    public RondaRecord() {
+    }
+
+    @Override
         public String toString() {
             return
                     "Ronda " + ronda +
@@ -46,6 +48,11 @@ public class RondaRecord {
         public void setPuntuacion(int puntuacion) {
             this.puntuacion = puntuacion;
         }
+
+    @Override
+    public int compareTo(RondaRecord o) {
+        return this.puntuacion- o.puntuacion;
     }
+}
 
 
