@@ -184,4 +184,17 @@
         android:textColor="@color/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btPause" />
+
+    <Button
+        android:id="@+id/btPausaMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="PAUSE/PLAY"
+        android:textSize="10sp"
+        android:onClick="onPauseMusic"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btEmpezar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
